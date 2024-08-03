@@ -1,7 +1,8 @@
 return {
+
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
@@ -26,22 +27,17 @@ return {
       require "configs.iron.keys"
     end,
     config = function()
-      local iron = require("iron.core")
+      local iron = require "iron.core"
       local options = require "configs.iron.options"
       iron.setup(options)
       -- iron also has a list of commands, see :h iron-commands for all available commands
-      vim.keymap.set("n", "<space>rs", "<cmd>IronRepl<cr>")
-      vim.keymap.set("n", "<space>rr", "<cmd>IronRestart<cr>")
-      vim.keymap.set("n", "<space>rf", "<cmd>IronFocus<cr>")
-      vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
     end,
   },
 
-
   {
     "nvim-orgmode/orgmode",
-    event = 'VeryLazy',
-    ft = { 'org' },
+    event = "VeryLazy",
+    ft = { "org" },
     config = function()
       require "configs.orgmode"
     end,
@@ -57,24 +53,30 @@ return {
 
   {
     "williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
-  		},
-  	},
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "prettier",
+      },
+    },
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css",
-       "python", "scheme",
-  		},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "python",
+        "scheme",
+      },
       ignore_install = { "org" },
-  	},
+    },
   },
-
 }

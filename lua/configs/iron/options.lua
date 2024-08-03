@@ -9,9 +9,10 @@ return {
       python = {
         -- see also: method to connect to existing kernel
         -- https://github.com/Vigemus/iron.nvim/issues/357
-        command = { os.getenv( 'CONDA_PREFIX' ) .. '/bin/ipython',
-                    '--no-autoindent',
-                    '--no-confirm-exit'}
+        -- command = { os.getenv( 'CONDA_PREFIX' ) .. '/bin/ipython',
+        --             '--no-autoindent',
+        --             '--no-confirm-exit'}
+        command = "python3",
       },
 
       scheme = {

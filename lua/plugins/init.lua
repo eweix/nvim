@@ -2,12 +2,13 @@ return {
 
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre", -- format on save
     config = function()
       require "configs.conform"
     end,
   },
 
+  -- IDE features
   {
     "charludo/projectmgr.nvim",
     lazy = false, -- important!
@@ -15,8 +16,6 @@ return {
       require "configs.projectmgr"
     end,
   },
-
-  -- { "Olical/conjure", require "configs.conjure" },
 
   {
     "Vigemus/iron.nvim",
@@ -30,10 +29,22 @@ return {
       local iron = require "iron.core"
       local options = require "configs.iron.options"
       iron.setup(options)
-      -- iron also has a list of commands, see :h iron-commands for all available commands
     end,
   },
 
+  -- {
+  --   "Olical/conjure",
+  --   ft = { "clojure", "fennel", "scheme" }, -- etc
+  --   lazy = true,
+  --   init = function()
+  --     vim.g["conjure#debug"] = true
+  --     vim.g["conjure#client#python#stdio#command"] = "python3"
+  --     -- vim.g["conjure#client#python#stdio#command"] = os.getenv "CONDA_PREFIX"
+  --     -- .. "/bin/ipython --no-autoindent --no-confirm-exit"
+  --   end,
+  -- },
+
+  -- org features
   {
     "nvim-orgmode/orgmode",
     event = "VeryLazy",

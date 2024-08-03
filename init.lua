@@ -1,5 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " " -- set spacebar as leader key
+vim.g.maplocalleader = "," -- set comma as local leader key
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -12,7 +13,8 @@ if not vim.loop.fs_stat(lazypath) then
     "--filter=blob:none",
     repo,
     "--branch=stable",
-    lazypath }
+    lazypath,
+  }
 end
 
 vim.opt.rtp:prepend(lazypath)

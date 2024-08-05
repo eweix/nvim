@@ -11,6 +11,9 @@ map("i", "jk", "<ESC>")
 -- mapping for ProjectMgr
 map("n", "<leader>fp", "<CMD> ProjectMgr<CR>", { desc = "open projects" })
 
+-- mapping for LazyGit
+map("n", "<leader>lg", "<CMD> LazyGit<CR>", { desc = "open git interface" })
+
 -- mappings for iron REPL
 map("n", "<space>rs", "<cmd>IronRepl<cr>", { desc = "open REPL" })
 map("n", "<space>rr", "<cmd>IronRestart<cr>", { desc = "restart REPL" })
